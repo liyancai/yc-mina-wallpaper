@@ -1,12 +1,14 @@
 <import src="../template/yc-info.wxml" />
 
 <yc-list-view loading="{{loading}}">
-<block wx:for="{{dataList}}" wx:key="{{index}}">
-  <view class='layout-2'>
-    <image src='{{item[0]}}' lazy-load='true'></image>
-    <image src='{{item[1]}}' lazy-load='true'></image>
-  </view>
-</block>
+<view class='layout-2'>
+  <block wx:for="{{dataList}}" wx:key="{{index}}">
+  <navigator url='../hot/detail?url={{item}}'>
+    <image src='{{item}}' lazy-load='true'></image>
+  </navigator>
+  </block>
+</view>
+
 </yc-list-view>
 
 <template is="ycInfoTemplate" data="{{showInfo}}"/>

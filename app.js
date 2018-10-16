@@ -11,5 +11,6 @@ App({
   },
   globalData: {
     userInfo: null,
+    favouriteListKey: 'yc-favourite-img-list'
   }
 })

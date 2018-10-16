@@ -1,4 +1,17 @@
-view {
+view.empty-view {
   margin: 40vh 0;
   text-align: center;
+  color: #888888;
+}
+
+view.layout-2 {
+  margin: 12rpx 0;
+  padding: 0 15rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+.layout-2 image {
+  width: 354rpx; height: 236rpx;
+  background: #fff;
 }

@@ -1,2 +1,15 @@
-<!--pages/hot/detail.wxml-->
-<text>pages/hot/detail.wxml</text>
+<view class='img-view'>
+  <image src='{{imageUrl}}' mode='aspectFit'
+    data-src='{{imageUrl}}' data-list='{{[imageUrl]}}'
+    binderror='bindImageError' bindload='bindImageLoad' bindtap='previewImage'></image>
+</view>
+
+<view class='img-opt'>
+    <view class='bg'></view>
+    <view class='content'>
+      <image src='../../images/back.png' bindtap='gotoBack'>返回</image>
+      <image wx:if='{{!hasFavourite}}' src='../../images/favourite.png' bindtap='gotoFavourite'>收藏</image>
+      <image wx:if='{{hasFavourite}}' src='../../images/favourite-on.png' bindtap='cancelFavourite'>取消收藏</image>
+      <image src='../../images/download.png' bindtap='gotoDownload'>下载</image>
+    </view>
+  </view>

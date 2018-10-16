@@ -1,3 +1,5 @@
+const app = getApp()
+
 const util = require('../../utils/util.js')
 const listUtil = require('../../utils/list.js')
 
@@ -44,7 +46,7 @@ Page({
       console.log(res)
       var list = res.result;
       that.setData({
-        dataList: that.data.dataList.concat(listUtil.splitList(list, 2)),
+        dataList: that.data.dataList.concat(list),
       })
 
       if (that.data.dataList.length == 0) {

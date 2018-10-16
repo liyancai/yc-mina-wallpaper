@@ -1,19 +1,19 @@
 {
   "pages": [
     "pages/hot/index",
-    "pages/random/index",
     "pages/hot/detail",
+    "pages/random/index",
     "pages/favourite/index",
     "pages/personal/index"
   ],
   "window": {
-    "backgroundColor": "#f5f5f5",
+    "backgroundColor": "#f8f8f8",
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#06a855",
     "navigationBarTitleText": "可可壁纸",
     "navigationBarTextStyle": "light",
-    "backgroundColorTop": "#f5f5f5",
-    "backgroundColorBottom": "#f5f5f5",
+    "backgroundColorTop": "#f8f8f8",
+    "backgroundColorBottom": "#f8f8f8",
     "onReachBottomDistance": 300
   },
   "cloud": true,

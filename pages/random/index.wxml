@@ -1,3 +1,5 @@
+<import src="../template/yc-info.wxml" />
+
 <yc-list-view loading="{{loading}}">
 <block wx:for="{{dataList}}" wx:key="{{index}}">
 

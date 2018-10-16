@@ -1,9 +1,19 @@
+const app = getApp()
 
 Page({
   data: {
-
+    dataList: []
   },
-  onLoad: function (options) {
+  onShow: function (options) {
+    let key = app.globalData.favouriteListKey
+    
+    let data = wx.getStorageSync(key)
+    if (data == '') {
+      return
+    }
 
+    this.setData({
+      dataList: data
+    })
   },
 })
