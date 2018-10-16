@@ -3,9 +3,7 @@
 <yc-list-view loading="{{loading}}">
 <view class='layout-2'>
   <block wx:for="{{dataList}}" wx:key="{{index}}">
-  <navigator url='../hot/detail?url={{item}}'>
-    <image src='{{item}}' lazy-load='true'></image>
-  </navigator>
+    <image src='{{item}}' lazy-load='true' data-src='{{item}}' bindtap='previewImage'></image>
   </block>
 </view>
 

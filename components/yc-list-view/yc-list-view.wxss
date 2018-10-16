@@ -15,7 +15,7 @@
   margin: 0 10rpx;
   background: #f8f8f8;
   border-radius: 50%;
-  animation: playing 2s linear infinite;
+  animation: playing 1.5s linear infinite;
   animation-play-state: running;
   -webkit-animation-play-state: running;
 }

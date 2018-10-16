@@ -5,13 +5,14 @@ view.empty-view {
 }
 
 view.layout-2 {
-  margin: 12rpx 0;
+  margin: 6rpx 0;
   padding: 0 15rpx;
   display: flex;
   justify-content: space-between;
   flex-flow: wrap;
 }
 .layout-2 image {
-  width: 354rpx; height: 236rpx;
+  margin: 6rpx 0;
+  width: 355rpx; height: 236rpx;
   background: #fff;
 }

@@ -8,8 +8,8 @@
     <view class='bg'></view>
     <view class='content'>
       <image src='../../images/back.png' bindtap='gotoBack'>返回</image>
-      <image wx:if='{{!hasFavourite}}' src='../../images/favourite.png' bindtap='gotoFavourite'>收藏</image>
-      <image wx:if='{{hasFavourite}}' src='../../images/favourite-on.png' bindtap='cancelFavourite'>取消收藏</image>
       <image src='../../images/download.png' bindtap='gotoDownload'>下载</image>
+      <image wx:if='{{!hasFavourite}}' src='../../images/favourite.png' bindtap='gotoFavourite'>收藏</image>
+      <image wx:if='{{hasFavourite}}' src='../../images/favourite-yellow.png' bindtap='cancelFavourite'>取消收藏</image>
     </view>
   </view>
