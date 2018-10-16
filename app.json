@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/hot/index",
+    "pages/random/index",
+    "pages/hot/detail",
+    "pages/favourite/index",
+    "pages/personal/index"
+  ],
+  "window": {
+    "backgroundColor": "#f5f5f5",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#06a855",
+    "navigationBarTitleText": "可可壁纸",
+    "navigationBarTextStyle": "light",
+    "backgroundColorTop": "#f5f5f5",
+    "backgroundColorBottom": "#f5f5f5",
+    "onReachBottomDistance": 300
+  },
+  "cloud": true,
+  "tabBar": {
+    "borderStyle": "black",
+    "selectedColor": "#06a855",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/random/index",
+        "text": "随机",
+        "iconPath": "images/random.png",
+        "selectedIconPath": "images/random-on.png"
+      },
+      {
+        "pagePath": "pages/hot/index",
+        "text": "热门",
+        "iconPath": "images/fire.png",
+        "selectedIconPath": "images/fire-on.png"
+      },
+      {
+        "pagePath": "pages/personal/index",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user-on.png"
+      }
+    ]
+  },
+  
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

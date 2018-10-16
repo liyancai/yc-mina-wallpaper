@@ -1,0 +1,7 @@
+<view>
+  <slot></slot>
+  <view class='list-bottom-view' wx:if='{{loading}}'>
+    <image src="images/loading.png"></image>
+    <view>一大波美图正在赶来···</view>
+  </view>
+</view>

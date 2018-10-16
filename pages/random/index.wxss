@@ -1,0 +1,32 @@
+@import "../template/yc-info.wxss";
+
+view.layout-3,
+view.layout-5 {
+  margin: 12rpx 0;
+  padding: 0 15rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.layout-5-left,
+.layout-5-right {
+  width: 47.2vw; height: 620rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.layout-5-right-top,
+.layout-5-right-bottom {
+  width: 100%; height: 304rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.layout-5-right-top image,
+.layout-5-right-bottom image {
+  width: 22.8vw; height: 100%;
+}
+
+.layout-3 image {
+  width: 232rpx; height: 412rpx;
+}

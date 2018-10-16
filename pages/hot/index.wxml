@@ -1,0 +1,12 @@
+<import src="../template/yc-info.wxml" />
+
+<yc-list-view loading="{{loading}}">
+<block wx:for="{{dataList}}" wx:key="{{index}}">
+  <view class='layout-2'>
+    <image src='{{item[0]}}' lazy-load='true'></image>
+    <image src='{{item[1]}}' lazy-load='true'></image>
+  </view>
+</block>
+</yc-list-view>
+
+<template is="ycInfoTemplate" data="{{showInfo}}"/>

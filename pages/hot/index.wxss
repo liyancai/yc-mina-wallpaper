@@ -1,0 +1,12 @@
+@import "../template/yc-info.wxss";
+
+view .layout-2 {
+  margin: 12rpx 0;
+  padding: 0 15rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.layout-2 image {
+  width: 354rpx; height: 236rpx;
+}
+
