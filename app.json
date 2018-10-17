@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/hot/index",
-    "pages/hot/detail",
+    "pages/wallpaper/detail",
     "pages/random/index",
     "pages/favourite/index",
     "pages/personal/index"

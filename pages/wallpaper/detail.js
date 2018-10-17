@@ -7,7 +7,7 @@ Page({
     hasFavourite: false,
   },
   onLoad: function (options) {
-    
+
     let url = options.url
 
     const reg = /wallpapers\/thumb\/small\/th-([0-9]+)\.jpg/igm;
@@ -29,7 +29,7 @@ Page({
       imageUrl: that.data.imageUrl.replace(".jpg", (e.detail.errMsg.indexOf('404 (Not Found)') > -1) ? '.png' : '.jpg'),
     })
   },
-  bindImageLoad: function(e) {
+  bindImageLoad: function (e) {
     let key = app.globalData.favouriteListKey
     let value = this.data.imageUrl
 
@@ -65,7 +65,7 @@ Page({
 
     //防止重复收藏
     let index = data.indexOf(value)
-    if(index > -1) {
+    if (index > -1) {
       data.splice(index, 1)
     }
     //将图片添加到数组开头

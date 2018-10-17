@@ -100,7 +100,7 @@ Page({
   previewImage: function (event) {
     var src = event.currentTarget.dataset.src;//获取data-src
     wx.navigateTo({
-      url: '/pages/hot/detail?url=' + src,
+      url: '/pages/wallpaper/detail?url=' + src,
     })
   },
   toggleInfoView() {
