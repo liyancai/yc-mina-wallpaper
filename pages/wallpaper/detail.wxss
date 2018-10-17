@@ -1,10 +1,6 @@
-view.img-view {
+swiper {
   width: 100vw; height: 92vh;
 }
-.img-view image {
-  background: #f8f8f8;
-}
-
 
 .img-opt {
   width: 100vw; height: 8vh;

@@ -1,3 +1,5 @@
+const app = getApp()
+
 const util = require('../../utils/util.js')
 const listUtil = require('../../utils/list.js')
 
@@ -89,8 +91,6 @@ Page({
 
     if (e.detail.errMsg.indexOf('404 (Not Found)') > -1) {
       dataList[dataset.index][dataset.pos] = dataset.src.replace(".jpg", ".png")
-    } else {
-      dataList[dataset.index][dataset.pos] = dataset.src.replace(".jpg", ".jpg ")
     }
 
     this.setData({
@@ -98,6 +98,10 @@ Page({
     })
   },
   previewImage: function (event) {
+
+    //进入图片详情前，初始化滚动swiper图片列表备用
+    app.globalData.wallpaperDetailList = event.currentTarget.dataset.list
+
     var src = event.currentTarget.dataset.src;//获取data-src
     wx.navigateTo({
       url: '/pages/wallpaper/detail?url=' + src,

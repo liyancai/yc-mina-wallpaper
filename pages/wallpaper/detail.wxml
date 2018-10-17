@@ -1,15 +1,20 @@
-<view class='img-view'>
-  <image src='{{imageUrl}}' mode='aspectFit'
-    data-src='{{imageUrl}}' data-list='{{[imageUrl]}}'
-    binderror='bindImageError' bindload='bindImageLoad' bindtap='previewImage'></image>
-</view>
+<swiper indicator-dots='{{true}}' current='{{defaultIndex}}' skip-hidden-item-layout='{{true}}' bindchange='bindChangeFunc'>
+  <block wx:for="{{wallpaperDetailList}}" wx:key='{{index}}'>
+    <swiper-item>
+      <image src='{{item}}' mode='aspectFit' lazy-load='true'
+        data-src='{{item}}' data-list='{{[item]}}' data-index='{{index}}'
+        binderror='bindImageError' bindload='bindImageLoad' bindtap='previewImage'>
+      </image>
+    </swiper-item>
+  </block>
+</swiper>
 
 <view class='img-opt'>
-    <view class='bg'></view>
-    <view class='content'>
-      <image src='../../images/back.png' bindtap='gotoBack'>返回</image>
-      <image src='../../images/download.png' bindtap='gotoDownload'>下载</image>
-      <image wx:if='{{!hasFavourite}}' src='../../images/favourite.png' bindtap='gotoFavourite'>收藏</image>
-      <image wx:if='{{hasFavourite}}' src='../../images/favourite-yellow.png' bindtap='cancelFavourite'>取消收藏</image>
-    </view>
+  <view class='bg'></view>
+  <view class='content'>
+    <image src='../../images/back.png' bindtap='gotoBack'>返回</image>
+    <image src='../../images/download.png' bindtap='gotoDownload'>下载</image>
+    <image wx:if='{{!hasFavourite}}' src='../../images/favourite.png' bindtap='gotoFavourite'>收藏</image>
+    <image wx:if='{{hasFavourite}}' src='../../images/favourite-yellow.png' bindtap='cancelFavourite'>取消收藏</image>
   </view>
+</view>

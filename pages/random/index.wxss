@@ -9,7 +9,7 @@ view.layout-5 {
 }
 .layout-5-left,
 .layout-5-right {
-  width: 47.2vw; height: 620rpx;
+  width: 47.4vw; height: 620rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

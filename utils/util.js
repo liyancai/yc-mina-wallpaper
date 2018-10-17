@@ -24,7 +24,28 @@ const previewImage = event => {
   })
 }
 
+/**
+ * 将图片地址处理成最终的大图地址
+ */
+const dealImageUrl = data => {
+
+  let sourceList = (typeof data == 'string') ? [data] : data
+  let targetList = []
+
+  for (let i = 0, r = ''; i < sourceList.length; i++) {
+    let reg = /wallpapers\/thumb\/small\/th-([0-9]+)\.jpg/igm;
+    if (r = reg.exec(sourceList[i])) {
+      targetList.push("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-" + r[1] + ".jpg")
+    } else {
+      targetList.push(sourceList[i])
+    }
+  }
+
+  return (typeof data == 'string') ? targetList[0] : targetList
+}
+
 module.exports = {
   formatTime: formatTime,
-  previewImage: previewImage
+  previewImage: previewImage,
+  dealImageUrl: dealImageUrl
 }
