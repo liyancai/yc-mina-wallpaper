@@ -7,14 +7,24 @@ Page({
     defaultIndex: 0,  //用于页面显示
     currentIndex: 0,  //用于内部值状态记录
     hasFavourite: false,
+    source: ''
   },
   onLoad: function (options) {
+
+    let _source = options.source
+    let _url = options.url
+    if(_source == 'share') {
+      app.globalData.wallpaperDetailList = [_url]
+      this.setData({
+        source: _source
+      })
+    }
 
     // 拿到当前的imageList 并处理
     // 处理当前图片地址
     // 获取到当前图片的索引
     let _wallpaperDetailList = util.dealImageUrl(app.globalData.wallpaperDetailList)
-    let _currentImage = util.dealImageUrl(options.url)
+    let _currentImage = util.dealImageUrl(_url)
     let _currentIndex = _wallpaperDetailList.indexOf(_currentImage)
 
     this.setData({
@@ -65,6 +75,14 @@ Page({
     })
   },
   gotoBack() {
+    if(this.data.source == 'share') {
+      this.setData({
+        source: ''
+      })
+      wx.switchTab({
+        url: '/pages/hot/index',
+      })
+    }
     wx.navigateBack({ delta: 1 })
   },
   gotoFavourite() {
@@ -132,6 +150,11 @@ Page({
     })
   },
   onShareAppMessage: function () {
-
+    let url = this.data.wallpaperDetailList[this.data.currentIndex]
+    return {
+      title: '海量高清壁纸，快来看看吧！- 可可壁纸',
+      path: '/pages/wallpaper/detail?source=share&url=' + url,
+      imageUrl: url
+    }
   }
 })

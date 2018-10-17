@@ -10,5 +10,4 @@ view.layout-2 {
 .layout-2 image {
   margin: 6rpx 0;
   width: 355rpx; height: 236rpx;
-  background: transparent;
 }

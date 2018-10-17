@@ -131,7 +131,7 @@ Page({
       console.log(res.target)
     }
     return {
-      title: '可可壁纸',
+      title: '海量高清壁纸，快来看看吧！- 可可壁纸',
       path: '/pages/random/index'
     }
   }
