@@ -9,9 +9,9 @@
   "window": {
     "backgroundColor": "#f8f8f8",
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#06a855",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "可可壁纸",
-    "navigationBarTextStyle": "light",
+    "navigationBarTextStyle": "black",
     "backgroundColorTop": "#f8f8f8",
     "backgroundColorBottom": "#f8f8f8",
     "onReachBottomDistance": 300
