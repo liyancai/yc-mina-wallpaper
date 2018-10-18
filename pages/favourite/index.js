@@ -9,7 +9,7 @@ Page({
     
     let data = wx.getStorageSync(key)
     if (data == '') {
-      return
+      data = []
     }
 
     this.setData({

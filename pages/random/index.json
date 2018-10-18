@@ -1,6 +1,5 @@
 {
   "enablePullDownRefresh": true,
-  "navigationBarTitleText": "可可壁纸",
   "usingComponents": {
     "yc-list-view": "../../components/yc-list-view/yc-list-view"
   }

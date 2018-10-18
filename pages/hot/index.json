@@ -1,6 +1,5 @@
 {
   "enablePullDownRefresh": true,
-  "navigationBarTitleText": "热门壁纸",
   "usingComponents": {
     "yc-list-view": "../../components/yc-list-view/yc-list-view"
   }

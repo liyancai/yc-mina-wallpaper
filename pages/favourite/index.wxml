@@ -1,4 +1,4 @@
-<view class='empty-view' wx:if='{{!dataList}}'>暂无数据!</view>
+<yc-empty-view show='{{dataList.length==0}}'></yc-empty-view>
 
 <view class='layout-2'>
   <block wx:for="{{dataList}}" wx:key="{{index}}">

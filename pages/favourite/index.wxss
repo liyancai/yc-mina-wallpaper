@@ -1,9 +1,3 @@
-view.empty-view {
-  margin: 40vh 0;
-  text-align: center;
-  color: #888888;
-}
-
 view.layout-2 {
   margin: 6rpx 0;
   padding: 0 15rpx;
