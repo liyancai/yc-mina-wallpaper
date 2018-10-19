@@ -87,10 +87,25 @@ Page({
   },
   previewImage: function (event) {
 
-    //进入图片详情前，初始化滚动swiper图片列表备用
-    app.globalData.wallpaperDetailList = this.data.dataList
+    //进入图片详情前，初始化滚动swiper图片列表备用。
+    //为防止从hot热图列表页进入详情时，swiper-item 过多，做最大长度截取
+    
+    let list = this.data.dataList
+    let src = event.currentTarget.dataset.src;//获取data-src
+    let length = list.length
+    let count = 10
 
-    var src = event.currentTarget.dataset.src;//获取data-src
+    if(length <= count) {
+      app.globalData.wallpaperDetailList = this.data.dataList
+    } else {
+      let index = list.indexOf(src)
+      if(length - index <= count) {
+        app.globalData.wallpaperDetailList = this.data.dataList.slice(length - count, length)
+      } else {
+        app.globalData.wallpaperDetailList = this.data.dataList.slice(index, index + count)
+      }
+    }
+
     wx.navigateTo({
       url: '/pages/wallpaper/detail?url=' + src,
     })
