@@ -2,6 +2,6 @@
 
 <view class='layout-2'>
   <block wx:for="{{dataList}}" wx:key="{{index}}">
-    <image src='{{item}}' lazy-load='true' mode='aspectFit' data-src='{{item}}' bindtap='previewImage'></image>
+    <image src='{{item}}' lazy-load='true' mode='aspectFill' data-src='{{item}}' bindtap='previewImage'></image>
   </block>
 </view>
