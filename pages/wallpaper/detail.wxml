@@ -12,9 +12,10 @@
 <view class='img-opt'>
   <view class='bg'></view>
   <view class='content'>
-    <image src='../../images/back.png' bindtap='gotoBack'>返回</image>
-    <image src='../../images/download.png' bindtap='gotoDownload'>下载</image>
-    <image wx:if='{{!hasFavourite}}' src='../../images/favourite.png' bindtap='gotoFavourite'>收藏</image>
-    <image wx:if='{{hasFavourite}}' src='../../images/favourite-yellow.png' bindtap='cancelFavourite'>取消收藏</image>
+    <image src='../../images/back.png' bindtap='gotoBack'></image>
+    <image src='../../images/download.png' bindtap='gotoDownload'></image>
+    <image wx:if='{{!hasFavourite}}' src='../../images/favourite.png' bindtap='gotoFavourite'></image>
+    <image wx:if='{{hasFavourite}}' src='../../images/favourite-yellow.png' bindtap='cancelFavourite'></image>
+    <image src='../../images/share.png' bindtap='gotoShare'></image>
   </view>
 </view>

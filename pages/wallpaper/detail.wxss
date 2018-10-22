@@ -1,6 +1,10 @@
 swiper {
   width: 100vw; height: 100vh;
 }
+swiper swiper-item image {
+  border-left: 1rpx solid #06a855;
+  border-right: 1rpx solid #06a855;
+}
 
 .img-opt {
   width: 100vw; height: 8vh;
@@ -24,6 +28,7 @@ swiper {
   align-items: center;
 }
 .img-opt .content image {
+  padding: 10rpx;
   width: 4vh; height: 4vh;
   background: transparent;
 }

@@ -7,6 +7,7 @@ Page({
     defaultIndex: 0,  //用于页面显示
     currentIndex: 0,  //用于内部值状态记录
     hasFavourite: false,
+    shareImageUrl: '',
     source: ''
   },
   onLoad: function (options) {
@@ -19,6 +20,7 @@ Page({
         source: _source
       })
     }
+    this.data.shareImageUrl = _url
 
     // 拿到当前的imageList 并处理
     // 处理当前图片地址
@@ -143,14 +145,22 @@ Page({
   },
   gotoDownload() {
     wx.showModal({
-      title: '喜欢吗？',
+      title: '下载原图',
       content: '点击一下图片进入全屏预览模式，然后长按图片把它保存到手机吧^_^',
       showCancel: false,
       confirmText: '知道了',
     })
   },
+  gotoShare() {
+    wx.showModal({
+      title: '分享给朋友',
+      content: '点击手机右上角的‘…’，然后将壁纸与朋友分享吧^_^',
+      showCancel: false,
+      confirmText: '好的',
+    })
+  },
   onShareAppMessage: function () {
-    let url = this.data.wallpaperDetailList[this.data.currentIndex]
+    let url = this.data.shareImageUrl
     return {
       title: '海量高清壁纸，快来看看吧！- 可可壁纸',
       path: '/pages/wallpaper/detail?source=share&url=' + url,
