@@ -54,7 +54,11 @@ Page({
   bindImageLoad: function (e) {
   },
   previewImage: function (event) {
-    util.previewImage(event)
+    var that = this
+    wx.previewImage({
+      current: that.data.wallpaperDetailList[that.data.currentIndex],
+      urls: that.data.wallpaperDetailList
+    })
   },
   bindChangeFunc(event) {
     this.data.currentIndex = event.detail.current
