@@ -143,8 +143,8 @@ Page({
   },
   gotoDownload() {
     wx.showModal({
-      title: '如何下载图片？',
-      content: '点击图片进行预览，然后长按图片保存到手机。',
+      title: '喜欢吗？',
+      content: '点击一下图片进行全屏预览模式，然后长按图片把它保存到手机吧^_^',
       showCancel: false,
       confirmText: '知道了',
     })
