@@ -1,5 +1,3 @@
-@import "../template/yc-info.wxss";
-
 view.layout-3,
 view.layout-5 {
   margin: 12rpx 0;
