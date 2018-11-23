@@ -1,4 +1,4 @@
-<import src="../template/yc-info.wxml" />
+<import src="../template/list-filter.wxml" />
 
 <yc-list-view loading="{{loading}}">
 <view class='layout-2'>
@@ -9,4 +9,4 @@
 
 </yc-list-view>
 
-<template is="ycInfoTemplate" data="{{showInfo}}"/>
+<template is="listFilterTemplate" data="{{filterInfo}}"/>

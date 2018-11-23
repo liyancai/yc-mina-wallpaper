@@ -4,7 +4,8 @@
     "pages/wallpaper/detail",
     "pages/random/index",
     "pages/favourite/index",
-    "pages/personal/index"
+    "pages/personal/index",
+    "pages/personal/about"  
   ],
   "window": {
     "backgroundColor": "#f8f8f8",

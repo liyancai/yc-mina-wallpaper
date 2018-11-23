@@ -5,7 +5,12 @@ const listUtil = require('../../utils/list.js')
 
 Page({
   data: {
-    showInfo: false,
+    filterInfo: {
+      showInfo: false,
+      cate1: 1,
+      cate2: 1,
+      cate3: 1,
+    },
     pageInfo: {
       pno: 1,
       psize: 24,
@@ -38,6 +43,9 @@ Page({
     wx.cloud.callFunction({
       name: 'wallhaven-image-list',
       data: {
+        cate1: that.data.filterInfo.cate1 + '',
+        cate2: that.data.filterInfo.cate2 + '',
+        cate3: that.data.filterInfo.cate3 + '',
         sorting: 'toplist',
         pno: pno,
         isCover: true
@@ -52,14 +60,7 @@ Page({
       if (that.data.dataList.length == 0) {
         console.log('empty list')
         //todo retry
-        that.setData({
-          pageInfo: {
-            loadAll: false,
-            pno: 1
-          }
-        })
-        that.getData(that.data.pageInfo.pno)
-
+        that.getFirstPageData()
         return
       }
       if (list.length < that.data.pageInfo.psize) {
@@ -110,11 +111,62 @@ Page({
       url: '/pages/wallpaper/detail?url=' + src,
     })
   },
+
+  getFirstPageData() {
+    this.setData({
+      pageInfo: {
+        loadAll: false,
+        pno: 1
+      }
+    })
+    this.getData(this.data.pageInfo.pno)
+  },
   toggleInfoView() {
     let that = this
     this.setData({
-      showInfo: !that.data.showInfo
+      filterInfo: {
+        showInfo: !that.data.filterInfo.showInfo,
+        cate1: that.data.filterInfo.cate1,
+        cate2: that.data.filterInfo.cate2,
+        cate3: that.data.filterInfo.cate3
+      }
     })
+  },
+  toggleCate1() {
+    let that = this
+    this.setData({
+      filterInfo: {
+        showInfo: that.data.filterInfo.showInfo,
+        cate1: (that.data.filterInfo.cate1 + 1) % 2,
+        cate2: that.data.filterInfo.cate2,
+        cate3: that.data.filterInfo.cate3
+      }
+    })
+    that.getFirstPageData()
+  },
+  toggleCate2() {
+    let that = this
+    this.setData({
+      filterInfo: {
+        showInfo: that.data.filterInfo.showInfo,
+        cate1: that.data.filterInfo.cate1,
+        cate2: (that.data.filterInfo.cate2 + 1) % 2,
+        cate3: that.data.filterInfo.cate3
+      }
+    })
+    that.getFirstPageData()
+  },
+  toggleCate3() {
+    let that = this
+    this.setData({
+      filterInfo: {
+        showInfo: that.data.filterInfo.showInfo,
+        cate1: that.data.filterInfo.cate1,
+        cate2: that.data.filterInfo.cate2,
+        cate3: (that.data.filterInfo.cate3 + 1) % 2
+      }
+    })
+    that.getFirstPageData()
   },
   onPullDownRefresh: function () {
     this.setData({

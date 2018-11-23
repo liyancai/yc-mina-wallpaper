@@ -1,0 +1,16 @@
+<template name="listFilterTemplate">
+  <view class='info-btn' bindtap='toggleInfoView'>
+    <image src='../../images/filter.png'></image>
+  </view>
+  <view class='info {{filterInfo.showInfo ? "active" : ""}}'>
+    <view class='bg'></view>
+    <view class='content'>
+      <view class='filter'>
+        <span class='{{filterInfo.cate1 == 1 ? "active" : ""}}' bindtap='toggleCate1'>常规</span>
+        <span class='{{filterInfo.cate2 == 1 ? "active" : ""}}' bindtap='toggleCate2'>动漫</span>
+        <span class='{{filterInfo.cate3 == 1 ? "active" : ""}}' bindtap='toggleCate3'>人物</span>
+      </view>
+      
+    </view>
+  </view>
+</template>

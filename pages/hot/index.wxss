@@ -1,4 +1,4 @@
-@import "../template/yc-info.wxss";
+@import "../template/list-filter.wxss";
 
 view.layout-2 {
   margin: 6rpx 0;
