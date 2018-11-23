@@ -1,0 +1,20 @@
+<view class='about-view'>
+
+  <view class='label'>关于</view>
+
+  <view class='text'>1. 欢迎访问可可壁纸，本站所有图片均为高清大图，尺寸较大，建议在WIFI环境下浏览（土豪请忽略）。👍</view>
+
+  <view class='text'>2. 图片来自网络, 有时存在网络请求响应较慢的情况，暂时不在我们的可控范围内，还请见谅。‍‍🤷</view>
+
+  <view class='text'>3. 关于图片使用, 如有侵权还请联系我们, 我们会立即停止服务，由此对您造成的不便，深表歉意。🤦😨‍</view>
+
+  <view class='text'>4. 作者本人承接小程序开发，如有需要欢迎随时来勾搭。😁</view>
+  
+  <view class='label'>联系方式</view>
+
+  <view class='text'>微信最直接：flame_Liyc</view>
+  <view class='text'>邮箱也可以：bzsnail@163.com</view>
+  
+  <image src="../../images/qrcode.jpeg"></image>
+
+</view>

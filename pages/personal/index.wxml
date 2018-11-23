@@ -14,3 +14,15 @@
   </view>
   </navigator>
 </view>
+
+<view class="line-m min"></view>
+
+<view class="section-module">
+  <navigator url='/pages/personal/about'>
+  <view class="section-item">
+    <image src="/images/info-on.png"></image>
+    <view>关于</view>
+    <span></span>
+  </view>
+  </navigator>
+</view>

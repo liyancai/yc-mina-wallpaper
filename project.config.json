@@ -12,7 +12,7 @@
 		"nodeModules": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.3.0",
+	"libVersion": "2.4.0",
 	"appid": "wxdc752789d6d16981",
 	"projectname": "yc-mina-wallpaper",
 	"debugOptions": {

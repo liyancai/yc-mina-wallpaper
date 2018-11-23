@@ -1,0 +1,20 @@
+.about-view {
+  width: 650rpx;
+  padding: 0 50rpx;
+  background: #fff;
+}
+
+.about-view .label {
+  padding: 50rpx 0;
+  font-size: 12pt;
+  font-weight: bold;
+}
+.about-view .text {
+  line-height: 2rem;
+  font-size: 11pt;
+}
+
+.about-view image {
+  width: 350rpx; height: 350rpx;
+  margin: 80rpx 150rpx;
+}

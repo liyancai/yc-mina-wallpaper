@@ -1,6 +1,7 @@
 page { margin: 0; padding: 0; color: #353535; background: #f8f8f8; font-size: 12pt; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-.line-m { width: 100vw; height: 5vw; background-color: #f8f8f8;}
+.line-m { width: 100vw; height: 5vw; background-color: #f8f8f8; }
+.line-m.min { height: 2vw; }
 .hidden { display: none; }
 .yc-ellipsis {
     line-height: 1.5rem;
