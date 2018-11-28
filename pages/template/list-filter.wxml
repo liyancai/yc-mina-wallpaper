@@ -2,15 +2,18 @@
   <view class='info-btn' bindtap='toggleInfoView'>
     <image src='../../images/filter.png'></image>
   </view>
-  <view class='info {{filterInfo.showInfo ? "active" : ""}}'>
+  <view class='info {{showInfo ? "active" : ""}}'>
     <view class='bg'></view>
     <view class='content'>
       <view class='filter'>
-        <span class='{{filterInfo.cate1 == 1 ? "active" : ""}}' bindtap='toggleCate1'>常规</span>
-        <span class='{{filterInfo.cate2 == 1 ? "active" : ""}}' bindtap='toggleCate2'>动漫</span>
-        <span class='{{filterInfo.cate3 == 1 ? "active" : ""}}' bindtap='toggleCate3'>人物</span>
+        <span class='{{cate1 == 1 && cate2 == 1 && cate3 == 1 ? "active" : ""}}' bindtap='toggleCate0'>全部</span>
+        <span class='{{cate1 == 1 ? "active" : ""}}' bindtap='toggleCate1'>常规</span>
+        <span class='{{cate2 == 1 ? "active" : ""}}' bindtap='toggleCate2'>动漫</span>
+        <span class='{{cate3 == 1 ? "active" : ""}}' bindtap='toggleCate3'>人物</span>
       </view>
-      
+      <view class="filter">
+        <input value='{{q}}' placeholder='仅支持英文关键词搜索' bindinput='inputFunc'></input>
+      </view>
     </view>
   </view>
 </template>

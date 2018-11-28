@@ -42,9 +42,15 @@
   padding: 5px 10px;
   text-transform: capitalize;
   border: 1px solid #fff;
-  display: inline-block
+  display: inline-block;
 }
 .info .content .filter span.active {
   color: #06a855;
   border: 1px solid #06a855;
+}
+.info .content .filter input {
+  width: 600rpx;
+  padding: 5px 10px;
+  border: 1px solid #06a855;
+  display: inline-block;
 }

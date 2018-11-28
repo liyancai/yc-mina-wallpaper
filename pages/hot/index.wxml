@@ -1,5 +1,7 @@
 <import src="../template/list-filter.wxml" />
 
+<yc-empty-view show='{{dataList.length==0 && !loading}}'></yc-empty-view>
+
 <yc-list-view loading="{{loading}}">
 <view class='layout-2'>
   <block wx:for="{{dataList}}" wx:key="{{index}}">
@@ -9,4 +11,4 @@
 
 </yc-list-view>
 
-<template is="listFilterTemplate" data="{{filterInfo}}"/>
+<template is="listFilterTemplate" data="{{...filterInfo}}"/>

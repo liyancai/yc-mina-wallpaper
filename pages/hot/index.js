@@ -10,6 +10,7 @@ Page({
       cate1: 1,
       cate2: 1,
       cate3: 1,
+      q: '',
     },
     pageInfo: {
       pno: 1,
@@ -23,11 +24,16 @@ Page({
     this.getData(this.data.pageInfo.pno)
   },
   getData(pno) {
+    var that = this;
 
     if (pno == 1 && !this.data.pageInfo.loadAll) {
       this.setData({
         dataList: [],
-        pageInfo: { loadAll: false }
+        pageInfo: {
+          loadAll: false,
+          pno: that.data.pageInfo.pno,
+          psize: that.data.pageInfo.psize
+        }
       })
     }
     if (this.data.pageInfo.loadAll) {
@@ -35,7 +41,6 @@ Page({
       return
     }
 
-    var that = this;
     this.setData({
       loading: true
     })
@@ -43,6 +48,7 @@ Page({
     wx.cloud.callFunction({
       name: 'wallhaven-image-list',
       data: {
+        q: that.data.filterInfo.q,
         cate1: that.data.filterInfo.cate1 + '',
         cate2: that.data.filterInfo.cate2 + '',
         cate3: that.data.filterInfo.cate3 + '',
@@ -59,16 +65,17 @@ Page({
 
       if (that.data.dataList.length == 0) {
         console.log('empty list')
-        //todo retry
-        that.getFirstPageData()
-        return
       }
       if (list.length < that.data.pageInfo.psize) {
         that.data.pageInfo.loadAll = true;
         wx.showToast({ title: '已加载全部!', icon: 'success' })
       } else {
         that.setData({
-          pageInfo: { pno: pno + 1 }
+          pageInfo: {
+            loadAll: false,
+            pno: pno + 1,
+            psize: that.data.pageInfo.psize
+          }
         })
       }
 
@@ -111,24 +118,56 @@ Page({
       url: '/pages/wallpaper/detail?url=' + src,
     })
   },
-
   getFirstPageData() {
+    let that = this
     this.setData({
       pageInfo: {
         loadAll: false,
-        pno: 1
+        pno: 1,
+        psize: that.data.pageInfo.psize
       }
     })
     this.getData(this.data.pageInfo.pno)
   },
+  inputFunc(e) {
+    let that = this
+    this.setData({
+      filterInfo: {
+        showInfo: that.data.filterInfo.showInfo,
+        cate1: that.data.filterInfo.cate1,
+        cate2: that.data.filterInfo.cate2,
+        cate3: that.data.filterInfo.cate3,
+        q: e.detail.value
+      }
+    })
+    console.log(that.data.filterInfo.q)
+  },
   toggleInfoView() {
     let that = this
+    let show = that.data.filterInfo.showInfo
+
     this.setData({
       filterInfo: {
         showInfo: !that.data.filterInfo.showInfo,
         cate1: that.data.filterInfo.cate1,
         cate2: that.data.filterInfo.cate2,
-        cate3: that.data.filterInfo.cate3
+        cate3: that.data.filterInfo.cate3,
+        q: that.data.filterInfo.q
+      }
+    })
+    if(show){
+      that.getFirstPageData()
+    }
+  },
+  toggleCate0() {
+    let that = this
+    this.setData({
+      filterInfo: {
+        showInfo: that.data.filterInfo.showInfo,
+        cate1: 1,
+        cate2: 1,
+        cate3: 1,
+        q: that.data.filterInfo.q
       }
     })
   },
@@ -137,42 +176,44 @@ Page({
     this.setData({
       filterInfo: {
         showInfo: that.data.filterInfo.showInfo,
-        cate1: (that.data.filterInfo.cate1 + 1) % 2,
-        cate2: that.data.filterInfo.cate2,
-        cate3: that.data.filterInfo.cate3
+        cate1: 1,
+        cate2: 0,
+        cate3: 0,
+        q: that.data.filterInfo.q
       }
     })
-    that.getFirstPageData()
   },
   toggleCate2() {
     let that = this
     this.setData({
       filterInfo: {
         showInfo: that.data.filterInfo.showInfo,
-        cate1: that.data.filterInfo.cate1,
-        cate2: (that.data.filterInfo.cate2 + 1) % 2,
-        cate3: that.data.filterInfo.cate3
+        cate1: 0,
+        cate2: 1,
+        cate3: 0,
+        q: that.data.filterInfo.q
       }
     })
-    that.getFirstPageData()
   },
   toggleCate3() {
     let that = this
     this.setData({
       filterInfo: {
         showInfo: that.data.filterInfo.showInfo,
-        cate1: that.data.filterInfo.cate1,
-        cate2: that.data.filterInfo.cate2,
-        cate3: (that.data.filterInfo.cate3 + 1) % 2
+        cate1: 0,
+        cate2: 0,
+        cate3: 1,
+        q: that.data.filterInfo.q
       }
     })
-    that.getFirstPageData()
   },
   onPullDownRefresh: function () {
+    let that = this
     this.setData({
       pageInfo: {
         loadAll: false,
-        pno: 1
+        pno: 1,
+        psize: that.data.pageInfo.psize
       }
     })
     this.getData(this.data.pageInfo.pno)
