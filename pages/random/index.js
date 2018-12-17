@@ -39,6 +39,7 @@ Page({
       name: 'wallhaven-image-list',
       data: {
         ratios: '9x16',
+        sorting: 'toplist',
         pno: pno
       },
     }).then(res => {
