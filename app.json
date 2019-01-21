@@ -24,13 +24,13 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/hot/index",
+        "pagePath": "pages/random/index",
         "text": "随机",
         "iconPath": "images/random.png",
         "selectedIconPath": "images/random-on.png"
       },
       {
-        "pagePath": "pages/random/index",
+        "pagePath": "pages/hot/index",
         "text": "热门",
         "iconPath": "images/fire.png",
         "selectedIconPath": "images/fire-on.png"

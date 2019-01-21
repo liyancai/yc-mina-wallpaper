@@ -52,6 +52,7 @@ Page({
         cate1: that.data.filterInfo.cate1 + '',
         cate2: that.data.filterInfo.cate2 + '',
         cate3: that.data.filterInfo.cate3 + '',
+        sorting: 'toplist',
         pno: pno,
         isCover: true
       },
