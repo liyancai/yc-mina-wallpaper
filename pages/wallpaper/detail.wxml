@@ -1,3 +1,6 @@
+<ad unit-id="adunit-05d84c0753973832"></ad>
+<view class="line-m min"></view>
+
 <swiper indicator-dots='{{false}}' current='{{defaultIndex}}' skip-hidden-item-layout='{{true}}' bindchange='bindChangeFunc'>
   <block wx:for="{{wallpaperDetailList}}" wx:key='{{index}}'>
     <swiper-item>

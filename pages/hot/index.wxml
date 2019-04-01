@@ -6,6 +6,7 @@
 <view class='layout-2'>
   <block wx:for="{{dataList}}" wx:key="{{index}}">
     <image src='{{item}}' lazy-load='true' data-src='{{item}}' bindtap='previewImage'></image>
+    <ad wx:if="{{index % 8 == 7}}" unit-id="adunit-d61f8c8fc126feb7"></ad>
   </block>
 </view>
 
