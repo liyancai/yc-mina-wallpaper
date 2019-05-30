@@ -33,9 +33,9 @@ const dealImageUrl = data => {
   let targetList = []
 
   for (let i = 0, r = ''; i < sourceList.length; i++) {
-    let reg = /wallpapers\/thumb\/small\/th-([0-9]+)\.jpg/igm;
+    let reg = /wallhaven.cc\/small\/([a-zA-Z0-9]{2})\/([a-zA-Z0-9]{6})\.jpg/igm;
     if (r = reg.exec(sourceList[i])) {
-      targetList.push("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-" + r[1] + ".jpg")
+      targetList.push("https://w.wallhaven.cc/full/" + r[1] + "/wallhaven-" + r[2] + ".jpg")
     } else {
       targetList.push(sourceList[i])
     }
