@@ -20,7 +20,7 @@ exports.main = async (event, context) => {
   pno = defaultValue(pno, '1')
   isCover = defaultValue(isCover, false)
 
-  var url = 'https://alpha.wallhaven.cc/search?q=' + q + '&categories=' + cate1 + '' + cate2 + '' + cate3 + '&purity=' + purity + '&ratios=' + ratios + '&sorting=' + sorting + '&order=' + order + '&page=' + pno
+  var url = 'https://wallhaven.cc/search?q=' + q + '&categories=' + cate1 + '' + cate2 + '' + cate3 + '&purity=' + purity + '&ratios=' + ratios + '&sorting=' + sorting + '&order=' + order + '&page=' + pno
   console.log(url)
 
   return await new Promise((resolve, reject) => {
@@ -45,15 +45,15 @@ const dealImageUrl = (str, isCover) => {
 
   let list = []
 
-  const reg = /wallpapers\/thumb\/small\/th-([0-9]+)\.jpg/igm;
+  const reg = /wallhaven.cc\/small\/([a-zA-Z0-9]{2})\/([a-zA-Z0-9]{6})\.jpg/igm;
 
   var r = ''
   while (r = reg.exec(str)) {
 
     if(isCover) {
-      list.push("https://alpha.wallhaven.cc/wallpapers/thumb/small/th-" + r[1] + ".jpg")
+      list.push("https://th.wallhaven.cc/small/" + r[1] + "/" + r[2] + ".jpg")
     } else {
-      list.push("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-" + r[1] + ".jpg")
+      list.push("https://w.wallhaven.cc/full/" + r[1] + "/wallhaven-" + r[2] + ".jpg")
     }
 
   }
