@@ -22,7 +22,7 @@
     <image src='{{item[7]}}' lazy-load='true' data-src='{{item[7]}}' data-list='{{item}}' data-index='{{index}}' data-pos='7' binderror='bindImageError' bindtap='previewImage'></image>
   </view>
 
-  <view class="ad-view">
+  <view class="ad-view" wx:if="{{index % 2 == 1}}">
     <ad unit-id="adunit-d61f8c8fc126feb7"></ad>
   </view>
 
