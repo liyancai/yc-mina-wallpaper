@@ -5,7 +5,7 @@
     "pages/random/index",
     "pages/favourite/index",
     "pages/personal/index",
-    "pages/personal/about"  
+    "pages/personal/about"
   ],
   "window": {
     "backgroundColor": "#f8f8f8",
@@ -43,10 +43,10 @@
       }
     ]
   },
-  
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
   },
-  "debug": false
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
 }

@@ -22,6 +22,9 @@
     <image src='{{item[7]}}' lazy-load='true' data-src='{{item[7]}}' data-list='{{item}}' data-index='{{index}}' data-pos='7' binderror='bindImageError' bindtap='previewImage'></image>
   </view>
 
-  <ad unit-id="adunit-d61f8c8fc126feb7"></ad>
+  <view class="ad-view">
+    <ad unit-id="adunit-d61f8c8fc126feb7"></ad>
+  </view>
+
 </block>
 </yc-list-view>
