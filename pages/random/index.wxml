@@ -1,5 +1,5 @@
 <yc-list-view loading="{{loading}}">
-<block wx:for="{{dataList}}" wx:key="{{index}}">
+<block wx:for="{{dataList}}" wx:key="random">
 
   <view class='layout-5'>
     <view class='layout-5-left'>

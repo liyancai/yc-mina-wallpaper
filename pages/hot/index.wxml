@@ -4,7 +4,7 @@
 
 <yc-list-view loading="{{loading}}">
 <view class='layout-2'>
-  <block wx:for="{{dataList}}" wx:key="{{index}}">
+  <block wx:for="{{dataList}}" wx:key="hot">
     <image src='{{item}}' lazy-load='true' data-src='{{item}}' bindtap='previewImage'></image>
     <ad wx:if="{{index % 12 == 11}}" unit-id="adunit-6d768a386d65d043"></ad>
   </block>
