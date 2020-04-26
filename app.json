@@ -3,6 +3,7 @@
     "pages/hot/index",
     "pages/wallpaper/detail",
     "pages/random/index",
+    "pages/food/index",
     "pages/favourite/index",
     "pages/personal/index",
     "pages/personal/about"
@@ -34,6 +35,12 @@
         "text": "热门",
         "iconPath": "images/fire.png",
         "selectedIconPath": "images/fire-on.png"
+      },
+      {
+        "pagePath": "pages/food/index",
+        "text": "美食",
+        "iconPath": "images/food.png",
+        "selectedIconPath": "images/food-on.png"
       },
       {
         "pagePath": "pages/personal/index",
