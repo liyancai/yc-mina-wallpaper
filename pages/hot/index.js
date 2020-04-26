@@ -23,17 +23,11 @@ Page({
   onLoad: function (options) {
     this.getData(this.data.pageInfo.pno)
   },
-  getData(pno) {
-    var that = this;
+  getData(__pno) {
 
-    if (pno == 1 && !this.data.pageInfo.loadAll) {
+    if (__pno == 1 && !this.data.pageInfo.loadAll) {
       this.setData({
-        dataList: [],
-        pageInfo: {
-          loadAll: false,
-          pno: that.data.pageInfo.pno,
-          psize: that.data.pageInfo.psize
-        }
+        pageInfo: { loadAll: false }
       })
     }
     if (this.data.pageInfo.loadAll) {
@@ -41,6 +35,7 @@ Page({
       return
     }
 
+    var that = this;
     this.setData({
       loading: true
     })
@@ -53,12 +48,19 @@ Page({
         cate2: that.data.filterInfo.cate2 + '',
         cate3: that.data.filterInfo.cate3 + '',
         sorting: 'toplist',
-        pno: pno,
+        pno: __pno,
         isCover: true
       },
     }).then(res => {
-      console.log(res)
+
       var list = res.result;
+
+      if(__pno == 1 && list.length > 0) {
+        that.setData({
+          dataList: [],
+        })
+      }
+
       that.setData({
         dataList: that.data.dataList.concat(list),
       })
@@ -73,7 +75,7 @@ Page({
         that.setData({
           pageInfo: {
             loadAll: false,
-            pno: pno + 1,
+            pno: __pno + 1,
             psize: that.data.pageInfo.psize
           }
         })

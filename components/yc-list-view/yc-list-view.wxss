@@ -14,7 +14,7 @@
   width: 40rpx; height: 40rpx;
   margin: 0 10rpx;
   background: #f8f8f8;
-  border-radius: 50%;
+  border-radius: 20rpx;
   animation: playing 1.5s linear infinite;
   animation-play-state: running;
   -webkit-animation-play-state: running;

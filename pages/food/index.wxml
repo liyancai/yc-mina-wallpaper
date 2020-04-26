@@ -1,0 +1,12 @@
+
+<yc-empty-view show='{{dataList.length==0 && !loading}}'></yc-empty-view>
+
+<yc-list-view loading="{{loading}}">
+<view class='layout-2'>
+  <block wx:for="{{dataList}}" wx:key="food">
+    <image src='{{item.url}}' lazy-load='true' data-src='{{item.url}}' data-index='{{index}}' bindtap='previewImage' style='width: {{item.viewWidth || 355}}rpx; height: {{item.viewHeight || 236}}rpx;'></image>
+    <ad wx:if="{{index % 10 == 9}}" unit-id="adunit-3f4c4c103bd01a79" ad-type="video" ad-theme="white"></ad>
+  </block>
+</view>
+
+</yc-list-view>

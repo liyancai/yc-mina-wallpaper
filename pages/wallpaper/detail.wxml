@@ -2,7 +2,7 @@
 <view class="line-m min"></view>
 
 <swiper indicator-dots='{{false}}' current='{{defaultIndex}}' skip-hidden-item-layout='{{true}}' bindchange='bindChangeFunc'>
-  <block wx:for="{{wallpaperDetailList}}" wx:key='{{index}}'>
+  <block wx:for="{{wallpaperDetailList}}" wx:key='image'>
     <swiper-item>
       <image src='{{item}}' mode='widthFix' lazy-load='true'
         data-src='{{item}}' data-list='{{[item]}}' data-index='{{index}}'

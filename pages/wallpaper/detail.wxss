@@ -2,8 +2,8 @@ swiper {
   width: 100vw; height: 100vh;
 }
 swiper swiper-item image {
-  border-left: 1rpx solid #06a855;
-  border-right: 1rpx solid #06a855;
+  border-left: 1px solid #06a855;
+  border-right: 1px solid #06a855;
 }
 
 .img-opt {
